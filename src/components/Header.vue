@@ -1,6 +1,13 @@
 <template>
-    <header class="main-header">
+    <header class="header">
         <h1>Todo</h1>
+        <input
+                type="text"
+                class="new-todo"
+                autofocus="autofocus"
+                placeholder="干啥去？"
+                @keyup.enter="addTodo"
+        >
     </header>
     <!--<ul>-->
         <!--<li v-for="(menu, index) of menus">-->
@@ -24,14 +31,3 @@
   //   }
   // }
 </script>
-<style scoped>
-    .main-header {
-        text-align: center;
-    }
-
-    .main-header h1 {
-        font-size: 100%;
-        font-weight: 100;
-        margin: 20px;
-    }
-</style>
