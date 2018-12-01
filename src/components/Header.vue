@@ -6,7 +6,7 @@
                 class="new-todo"
                 autofocus="autofocus"
                 placeholder="Where are you going?"
-                @keyup.enter="addTodo"
+                @keyup.enter="handleAddTodo"
         >
     </header>
 </template>
@@ -19,18 +19,8 @@
       }
     },
     methods: {
-      addTodo(e) {
-        const content = e.target.value.trim()
-        if (content === '') {
-          alert('Please input todo content.')
-        } else {
-          this.todoItems.unshift({
-            id: this.todoItems.length + 1,
-            content: content,
-            completed: false,
-          })
-          e.target.value = ''
-        }
+      handleAddTodo(e) {
+        this.$emit('handleAddTodo', e)
       }
     },
     computed: {}

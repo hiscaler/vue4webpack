@@ -1,6 +1,9 @@
 <template>
     <div id="app" class="todoapp">
-        <Header v-bind:todo-items="todoItems"></Header>
+        <Header
+                v-bind:todo-items="todoItems"
+                @handleAddTodo="addTodo"
+        ></Header>
         <Todo v-bind:todo-items="todoItems"></Todo>
         <Tabs v-bind:filter="filter" v-bind:count="todoItems.length"></Tabs>
         <Footer></Footer>
@@ -49,12 +52,17 @@
     },
     methods: {
       addTodo(e) {
-        alert('dd')
-        this.todoItems.unshift({
-          id: this.id++,
-          content: e.target.value.trim(),
-          completed: false,
-        })
+        const content = e.target.value.trim()
+        if (content === '') {
+          alert('Please input todo content.')
+        } else {
+          this.todoItems.unshift({
+            id: this.todoItems.length + 1,
+            content: content,
+            completed: false,
+          })
+          e.target.value = ''
+        }
       }
     }
   }
