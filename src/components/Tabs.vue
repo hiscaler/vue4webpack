@@ -1,6 +1,6 @@
 <template>
     <footer class="footer" style="">
-        <span class="todo-count"><strong>{{todoItems.length}}</strong> items left</span>
+        <span class="todo-count"><strong>{{count}}</strong> items left</span>
         <ul class="filters">
             <li
                     v-for="tab in tabs"
@@ -22,8 +22,8 @@
         type: String,
         required: true
       },
-      todoItems: {
-        type: Array,
+      count: {
+        type: Number,
         required: true
       }
     },

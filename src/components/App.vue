@@ -2,7 +2,7 @@
     <div id="app" class="todoapp">
         <Header></Header>
         <Todo v-bind:todo-items="todoItems"></Todo>
-        <Tabs v-bind:filter="filter" v-bind:todo-items="todoItems"></Tabs>
+        <Tabs v-bind:filter="filter" v-bind:count="todoItems.length"></Tabs>
         <Footer></Footer>
     </div>
 </template>
