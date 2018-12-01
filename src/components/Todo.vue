@@ -9,6 +9,7 @@
                     v-for="(todo, index) of todoItems"
                     :key="index"
                     @handleDeleteTodo="deleteTodo"
+                    @handleCompleteTodo="completeTodo"
             ></Item>
         </ul>
     </section>
@@ -34,6 +35,9 @@
     methods: {
       deleteTodo(index) {
         this.todoItems.splice(index, 1)
+      },
+      completeTodo(index) {
+        this.todoItems[index].completed = true
       },
       toggleAll() {
         this.showAll = !this.showAll

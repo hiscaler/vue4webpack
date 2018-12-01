@@ -1,9 +1,10 @@
 <template>
-    <li class="todo">
-        <div :class="['view', todo.completed?'completed': '']">
+    <li :class="['todo', todo.completed?'completed': '']">
+        <div class="view">
             <input type="checkbox"
                    class="toggle"
                    v-model="todo.completed"
+                   @click="handleCompleteTodo(index)"
             >
             <label>{{todo.content}}</label>
             <button class="destroy" @click="handleDeleteTodo(index)"></button>
@@ -19,6 +20,9 @@
     methods: {
       handleDeleteTodo(index) {
         this.$emit('handleDeleteTodo', index)
+      },
+      handleCompleteTodo(index) {
+        this.$emit('handleCompleteTodo', index)
       }
     }
   }
