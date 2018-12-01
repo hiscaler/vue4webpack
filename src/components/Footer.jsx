@@ -2,7 +2,7 @@ import '../assets/styles/footer.css'
 export default {
   data() {
     return {
-      author: "Hiscaler",
+      author: "hiscaler",
     }
   },
   render() {
