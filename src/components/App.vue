@@ -2,6 +2,7 @@
     <div id="app" class="todoapp">
         <Header></Header>
         <Todo></Todo>
+        <Tabs filter="filter"></Tabs>
         <Footer></Footer>
     </div>
 </template>
@@ -9,22 +10,19 @@
   import Header from './Header.vue'
   import Footer from './Footer.jsx'
   import Todo from './Todo.vue'
+  import Tabs from './Tabs.vue'
 
   export default {
     components: {
       Header,
       Footer,
-      Todo
+      Todo,
+      Tabs
     },
     data() {
       return {
-        text: 'Test'
+        filter: 'All'
       }
     }
   }
 </script>
-<style scoped>
-    #test {
-        color: red;
-    }
-</style>

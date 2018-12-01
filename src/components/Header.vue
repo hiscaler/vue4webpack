@@ -5,29 +5,8 @@
                 type="text"
                 class="new-todo"
                 autofocus="autofocus"
-                placeholder="干啥去？"
+                placeholder="Where are you going?"
                 @keyup.enter="addTodo"
         >
     </header>
-    <!--<ul>-->
-        <!--<li v-for="(menu, index) of menus">-->
-            <!--<a href="">{{index}}{{menu.label}}</a>-->
-        <!--</li>-->
-    <!--</ul>-->
 </template>
-<script>
-  // export default {
-  //   data() {
-  //     return {
-  //       menus: [
-  //         {
-  //           label: 'Homepage',
-  //         },
-  //         {
-  //           label: 'About'
-  //         }
-  //       ]
-  //     }
-  //   }
-  // }
-</script>
