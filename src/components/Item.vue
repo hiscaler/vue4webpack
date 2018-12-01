@@ -5,7 +5,7 @@
                    class="toggle"
                    v-model="todo.completed"
             >
-            <label>{{index}}. {{todo.content}}</label>
+            <label>{{todo.content}}</label>
             <button class="destroy" @click="handleDeleteTodo(index)"></button>
         </div>
     </li>
@@ -13,13 +13,8 @@
 <script>
   export default {
     props: {
-      index: {
-        type: Number
-      },
-      todo: {
-        type: Object,
-        required: true
-      }
+      index: Number,
+      todo: Object
     },
     methods: {
       handleDeleteTodo(index) {
