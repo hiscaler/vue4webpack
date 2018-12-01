@@ -20,7 +20,7 @@
     },
     methods: {
       deleteTodo(todo) {
-        console.info(this.id)
+
       }
     }
   }

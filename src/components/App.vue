@@ -1,6 +1,6 @@
 <template>
     <div id="app" class="todoapp">
-        <Header></Header>
+        <Header v-bind:todo-items="todoItems"></Header>
         <Todo v-bind:todo-items="todoItems"></Todo>
         <Tabs v-bind:filter="filter" v-bind:count="todoItems.length"></Tabs>
         <Footer></Footer>
@@ -37,6 +37,11 @@
           {
             id: 3,
             content: 'test 3',
+            completed: false
+          },
+          {
+            id: 4,
+            content: 'test 4',
             completed: false
           }
         ],

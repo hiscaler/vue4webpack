@@ -23,11 +23,6 @@
     },
     data() {
       return {
-        todo: {
-          id: 0,
-          content: 'this is todo',
-          completed: false
-        },
         showAll: true
       }
     },
