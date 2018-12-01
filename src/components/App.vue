@@ -1,8 +1,8 @@
 <template>
     <div id="app" class="todoapp">
         <Header></Header>
-        <Todo></Todo>
-        <Tabs v-bind:filter="filter"></Tabs>
+        <Todo v-bind:todo-items="todoItems"></Todo>
+        <Tabs v-bind:filter="filter" v-bind:todo-items="todoItems"></Tabs>
         <Footer></Footer>
     </div>
 </template>
@@ -21,7 +21,35 @@
     },
     data() {
       return {
-        "filter": 'All'
+        "filter": 'All',
+        id: 0,
+        todoItems: [
+          {
+            id: 1,
+            content: 'test 1',
+            completed: false
+          },
+          {
+            id: 2,
+            content: 'test 2',
+            completed: false
+          },
+          {
+            id: 3,
+            content: 'test 3',
+            completed: false
+          }
+        ],
+      }
+    },
+    methods: {
+      addTodo(e) {
+        alert('dd')
+        this.todoItems.unshift({
+          id: this.id++,
+          content: e.target.value.trim(),
+          completed: false,
+        })
       }
     }
   }

@@ -3,7 +3,7 @@
         <input id="toggle-all" type="checkbox" class="toggle-all" @click="toggleAll()">
         <label for="toggle-all">Mark all as complete</label>
         <ul class="todo-list" v-show="showAll">
-            <Item :todo="todo"></Item>
+            <Item :todo="todo" v-for="(todo, index) of todoItems" :key="index"></Item>
         </ul>
     </section>
 </template>
@@ -11,6 +11,16 @@
   import Item from './Item.vue'
 
   export default {
+    props: {
+      todoItems: {
+        type: Array,
+        required: true
+      },
+      // todo: {
+      //   type: Object,
+      //   required: true
+      // }
+    },
     data() {
       return {
         todo: {
@@ -18,7 +28,7 @@
           content: 'this is todo',
           completed: false
         },
-        showAll: false
+        showAll: true
       }
     },
     components: {

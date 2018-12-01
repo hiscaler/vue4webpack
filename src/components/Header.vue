@@ -10,3 +10,12 @@
         >
     </header>
 </template>
+<script>
+  export default {
+    methods:
+      {
+        addTodo() {
+        }
+      }
+  }
+</script>
