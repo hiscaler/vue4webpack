@@ -2,7 +2,7 @@
     <div id="app" class="todoapp">
         <Header></Header>
         <Todo></Todo>
-        <Tabs filter="filter"></Tabs>
+        <Tabs v-bind:filter="filter"></Tabs>
         <Footer></Footer>
     </div>
 </template>
@@ -21,7 +21,7 @@
     },
     data() {
       return {
-        filter: 'All'
+        "filter": 'All'
       }
     }
   }
