@@ -2,7 +2,7 @@
     <section class="main">
         <input id="toggle-all" type="checkbox" class="toggle-all">
         <label for="toggle-all">Mark all as complete</label>
-        <ul>
+        <ul class="todo-list">
             <Item :todo="todo"></Item>
         </ul>
 
