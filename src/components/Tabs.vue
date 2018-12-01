@@ -10,7 +10,11 @@
                 <a :class="[filter===tab?'selected': '']">{{tab}}</a>
             </li>
         </ul>
-        <button class="clear-completed" style="display: none;" @click="clearAllCompleted">
+        <button
+                class="clear-completed"
+                v-show="finishedTodoItemsLength"
+                @click="handleClearAllCompleted"
+        >
             Clear completed
         </button>
     </footer>
@@ -25,7 +29,8 @@
       count: {
         type: Number,
         required: true
-      }
+      },
+      finishedTodoItemsLength: Number
     },
     data() {
       return {
@@ -38,8 +43,8 @@
       toggleFilter(tab) {
         this.$emit('toggle', tab)
       },
-      clearAllCompleted() {
-
+      handleClearAllCompleted() {
+        this.$emit('handleClearAllCompleted')
       }
     }
   }

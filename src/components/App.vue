@@ -8,7 +8,9 @@
         <Tabs
                 v-bind:filter="filter"
                 v-bind:count="unFinishedTodoItemsLength"
+                v-bind:finishedTodoItemsLength="finishedTodoItemsLength"
                 @toggle="toggleTabFilter"
+                @handleClearAllCompleted="clearAllCompleted"
         ></Tabs>
         <Footer></Footer>
     </div>
@@ -70,21 +72,25 @@
       },
       toggleTabFilter(tab) {
         this.filter = tab
+      },
+      clearAllCompleted() {
+        this.todoItems = this.todoItems.filter(todo => !todo.completed)
       }
     },
     computed: {
       filteredTodoItems() {
         if (this.filter === 'All') {
           return this.todoItems
-        } else if (this.filter === 'Active') {
-          return this.todoItems.filter(todo => !todo.completed)
-        } else {
-          return this.todoItems.filter(todo => todo.completed)
         }
+        const isCompleted = this.filter !== 'Active'
+        return this.todoItems.filter(todo => todo.completed === isCompleted)
       },
       // 未完成的 todo 数量
       unFinishedTodoItemsLength() {
         return this.todoItems.filter(todo => !todo.completed).length;
+      },
+      finishedTodoItemsLength() {
+        return this.todoItems.filter(todo => todo.completed).length;
       }
     }
   }
