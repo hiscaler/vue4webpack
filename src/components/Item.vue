@@ -5,22 +5,25 @@
                    class="toggle"
                    v-model="todo.completed"
             >
-            <label>{{todo.content}}</label>
-            <button class="destroy" @click="deleteTodo(todo)"></button>
+            <label>{{index}}. {{todo.content}}</label>
+            <button class="destroy" @click="handleDeleteTodo(index)"></button>
         </div>
     </li>
 </template>
 <script>
   export default {
     props: {
+      index: {
+        type: Number
+      },
       todo: {
         type: Object,
         required: true
       }
     },
     methods: {
-      deleteTodo(todo) {
-
+      handleDeleteTodo(index) {
+        this.$emit('handleDeleteTodo', index)
       }
     }
   }

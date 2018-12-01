@@ -3,7 +3,13 @@
         <input id="toggle-all" type="checkbox" class="toggle-all" @click="toggleAll()">
         <label for="toggle-all">Mark all as complete</label>
         <ul class="todo-list" v-show="showAll">
-            <Item :todo="todo" v-for="(todo, index) of todoItems" :key="index"></Item>
+            <Item
+                    :todo="todo"
+                    :index="index"
+                    v-for="(todo, index) of todoItems"
+                    :key="index"
+                    @handleDeleteTodo="deleteTodo"
+            ></Item>
         </ul>
     </section>
 </template>
@@ -15,11 +21,7 @@
       todoItems: {
         type: Array,
         required: true
-      },
-      // todo: {
-      //   type: Object,
-      //   required: true
-      // }
+      }
     },
     data() {
       return {
@@ -30,8 +32,8 @@
       Item
     },
     methods: {
-      addTodo() {
-
+      deleteTodo(index) {
+        this.todoItems.splice(index, 1)
       },
       toggleAll() {
         this.showAll = !this.showAll
