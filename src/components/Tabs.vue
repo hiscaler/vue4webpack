@@ -7,7 +7,7 @@
                     :key="tab"
                     @click="toggleFilter(tab)"
             >
-                <a href="" :class="[filter===tab?'selected': '']">{{tab}}</a>
+                <a :class="[filter===tab?'selected': '']">{{tab}}</a>
             </li>
         </ul>
         <button class="clear-completed" style="display: none;" @click="clearAllCompleted">
@@ -35,8 +35,8 @@
       }
     },
     methods: {
-      toggleFilter() {
-
+      toggleFilter(tab) {
+        this.$emit('toggle', tab)
       },
       clearAllCompleted() {
 
