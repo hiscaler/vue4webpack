@@ -35,24 +35,9 @@
         todoItems: [
           {
             id: 1,
-            content: 'test 1',
+            content: 'This is a test todo',
             completed: false
           },
-          {
-            id: 2,
-            content: 'test 2',
-            completed: false
-          },
-          {
-            id: 3,
-            content: 'test 3',
-            completed: false
-          },
-          {
-            id: 4,
-            content: 'test 4',
-            completed: false
-          }
         ],
       }
     },

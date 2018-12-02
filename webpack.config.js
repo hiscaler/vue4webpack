@@ -16,7 +16,9 @@ const config = {
     rules: [
       {
         test: /\.vue$/,
-        loader: "vue-loader"
+        loader: "vue-loader",
+        include: path.join(__dirname, 'src/components'),
+        exclude: /node_modules/
       },
       {
         test: /\.jsx$/,
